@@ -1,0 +1,1 @@
+   print('',arr[i],end='')

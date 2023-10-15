@@ -1,0 +1,1 @@
+rint('N khong phai la so fibonacci chan')

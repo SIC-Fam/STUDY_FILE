@@ -1,0 +1,1 @@
+uoc so cua',n,'la',sum)
