@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 3</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      input,
+      textarea {
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      input.half {
+        width: 50%;
+      }
+      *::placeholder {
+        color: #ccc;
+      }
+      .button {
+        background-color: rgba(0, 145, 255, 0.714);
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body style="padding: 20px">
+    <form action="" style="display: flex; flex-direction: column; gap: 10px">
+      <h4>Get in touch with us by filling contact form below</h4>
+      <div style="display: flex; gap: 10px">
+        <input
+          class="half"
+          name="name"
+          placeholder="* Enter your full name"
+          required
+          type="text"
+        />
+        <input
+          class="half"
+          name="email"
+          placeholder="* Enter your email"
+          required
+          type="email"
+        />
+      </div>
+      <input
+        width="100%"
+        type="text"
+        placeholder="Enter your subject"
+        name="subject"
+      />
+      <textarea
+        name="message"
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="* Your message here"
+        required
+        style="resize: none; border: 1px solid #ccc"
+      ></textarea>
+      <div
+        style="margin-top: 10px; display: flex; justify-content: space-between"
+      >
+        <button type="submit" class="button">Send message</button>
+        <p style="color: gray; line-height: 1.5">
+          * Please fill all required form field, thanks!
+        </p>
+      </div>
+    </form>
+  </body>
+</html>

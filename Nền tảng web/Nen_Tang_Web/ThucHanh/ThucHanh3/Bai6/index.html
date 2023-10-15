@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="../bootstrap-5.0.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        list-style-type: none;
+      }
+      .nav-item {
+        background-color: blue;
+      }
+      .nav-link {
+        color: #fff;
+      }
+      .nav-link.nav-active {
+        background-color: #fff;
+      }
+      .nav-link.nav-active .nav-link {
+        color: #000;
+      }
+      .tab-panel.active {
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul id="nav-header" class="nav nav-tabs gap-2" role="tablist"></ul>
+      <div id="content" class="tab-content" id="myTabContent"></div>
+    </nav>
+  </body>
+  <script src="../bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <script>
+    "Thong tin chinh", "Hinh anh", "Seo";
+    const navLinks = [
+      {
+        label: "Thong tin chinh",
+        key: "information",
+      },
+      {
+        label: "Hinh anh",
+        key: "image",
+      },
+      {
+        label: "SEO",
+        key: "seo",
+      },
+    ];
+    const navHeader = document.querySelector("#nav-header");
+    const content = document.querySelector("#content");
+    navHeader.innerHTML = navLinks
+      .map(
+        (nav) =>
+          `
+        <li class='nav-item'>
+            <a class="nav-link" role="presentation" 
+            data-bs-toggle="tab" data-bs-target="#${nav.key}" type="button" role="tab" aria-controls=${nav.key} aria-selected="true" aria-labelledby="nav-${nav.key}-tab"
+            href="#${nav.key}">${nav.label}</a>
+        </li>
+        `
+      )
+      .join("");
+
+    content.innerHTML = navLinks
+      .map(
+        (nav) => `
+    <div class="tab-pane fade" id=${nav.key} role="tabpanel">Tab ${nav.label}</div>
+    `
+      )
+      .join("");
+  </script>
+</html>

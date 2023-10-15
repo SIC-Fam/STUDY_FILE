@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <style>
+      .text-xs {
+        font-size: 14px;
+      }
+      .border-gray {
+        border: 1px solid #ccc;
+      }
+      *::placeholder {
+        color: #ccc;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="bg-dark">
+    <section
+      style="
+        background: url('./img/banner.png') top center/cover no-repeat !important;
+        height: 100vh;
+      "
+      id="hero"
+      class="d-flex flex-column align-items-center text-white"
+    >
+      <nav class="navbar-expand-lg py-3 bg-transparent container-fluid">
+        <div class="container-fluid d-flex justify-content-between">
+          <div class="navbar-brand">
+            <img height="30" src="./img/logo.svg" alt="" />
+          </div>
+          <div class="navbar">
+            <ul class="navbar-nav d-flex align-items-center">
+              <li class="nav-item ml-5">
+                <a href="" class="nav-link text-white">Company</a>
+              </li>
+              <li class="nav-item ml-5 dropdown">
+                <span
+                  href=""
+                  class="dropdown-toggle text-white"
+                  data-toggle="dropdown"
+                  >Product</span
+                >
+                <div
+                  class="dropdown-menu rounded-lg border-0"
+                  aria-labelledby="dropdownMenuButton"
+                >
+                  <a class="dropdown-item py-3" href="#">All Developer</a>
+                  <a class="dropdown-item py-3" href="#">List Employee</a>
+                </div>
+              </li>
+              <li class="nav-item ml-5">
+                <a href="" class="nav-link text-white">Developer</a>
+              </li>
+              <li class="nav-item ml-5">
+                <a href="" class="nav-link text-white">How it works</a>
+              </li>
+              <li class="nav-item ml-5 btn btn-primary">Sign in</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <h1 class="pt-5 w-50 text-center">
+        The highest commission offer among the agencies in the market
+      </h1>
+      <p class="pt-3">
+        The digital platform to connect real estate between Developers and
+        Agents.
+      </p>
+      <div
+        class="mt-5 bg-white d-flex p-3 rounded-lg align-items-end text-black-50"
+      >
+        <div class="pr-3">
+          <p class="text-xs">Search</p>
+          <input
+            class="p-2 border-gray"
+            style="width: 400px"
+            placeholder="Search by Property, Developer, Area"
+            type="text"
+          />
+        </div>
+        <div class="pr-3">
+          <p class="text-xs">Search</p>
+          <input class="p-2 border-gray" type="text" />
+        </div>
+        <div class="pr-3">
+          <p class="text-xs">Search</p>
+          <input class="p-2 border-gray" type="text" />
+        </div>
+        <button class="btn btn-primary">Search</button>
+      </div>
+    </section>
+  </body>
+
+  <!-- jQuery library -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</html>

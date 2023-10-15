@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="../bootstrap-5.0.2/dist/css/bootstrap.min.css"
+    />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="row p-3">
+      <div class="col-4">
+        <h3 class="bg-primary text-white p-3 text-uppercase">
+          Nhap thong tin xe co
+        </h3>
+        <form action="" name="form">
+          <label for="nameCar" class="form-label">Ten xe *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nameCar"
+            aria-describedby="nameCar"
+            id="validationCustom01"
+          />
+          <!-- <div class="invalid-feedback">Please choose a username.</div> -->
+          <label for="imageLink" class="form-label">Hinh anh</label>
+          <input
+            type="text"
+            class="form-control"
+            id="imageLink"
+            aria-describedby="imageLink"
+          />
+          <label for="carCompany" class="form-label">Hang xe *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="carCompany"
+            aria-describedby="carCompany"
+          />
+          <!-- <div class="invalid-feedback">Please choose a username.</div> -->
+          <label for="cost" class="form-label">Gia tien *</label>
+          <input
+            type="number"
+            class="form-control"
+            id="cost"
+            aria-describedby="cost"
+          />
+          <!-- <div class="invalid-feedback">Please choose a username.</div> -->
+          <label for="description" class="form-label">Mo ta</label>
+          <textarea
+            class="form-control"
+            id="description"
+            aria-describedby="description"
+            rows="3"
+          ></textarea>
+          <label for="person" class="form-label">Nguoi lien he *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="person"
+            aria-describedby="person"
+          />
+          <!-- <div class="invalid-feedback">Please choose a username.</div> -->
+          <label for="phoneNumber" class="form-label"
+            >So dien thoai nguoi lien he *</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="phoneNumber"
+            aria-describedby="phoneNumber"
+          />
+          <!-- <div class="invalid-feedback">Please choose a username.</div> -->
+          <label for="email" class="form-label">Email *</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            aria-describedby="email"
+          />
+          <!-- <div class="invalid-feedback">Please choose a username.</div> -->
+          <div class="mt-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Xoa</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-8">
+        <h3 class="bg-primary text-white p-3 text-uppercase">
+          Quan ly danh sach xe co
+        </h3>
+        <table class="table table-bordered mt-3">
+          <thead>
+            <tr>
+              <th scope="col">STT</th>
+              <th scope="col">Ten xe</th>
+              <th scope="col">Hinh anh</th>
+              <th scope="col">Hang xe</th>
+              <th scope="col">Gia tien</th>
+              <th scope="col">Mo ta</th>
+              <th scope="col">Nguoi lien he</th>
+              <th scope="col">So dien thoai nguoi lien he</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="../bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <script>
+    const form = document.forms["form"];
+    const tableBody = document.querySelector("table tbody");
+    const resetValueButton = document.querySelector("button[type='reset']");
+    const list = JSON.parse(localStorage.getItem("listCar")) || [];
+    list.forEach((item) => {
+      handleAddNewRow(item);
+    });
+
+    function handleAddNewRow(newVal) {
+      const newTableRow = Object.values(newVal)
+        .map((item) => {
+          if (item === newVal["imageLink"]) {
+            return `<td><img src="${item}"" width='100%' alt="" /></td>`;
+          }
+          return `
+            <td>${item}</td>
+          `;
+        })
+        .join("");
+      tableBody.insertAdjacentHTML(
+        "beforeend",
+        `
+            <th scope="row">${list.length}</th>
+            ${newTableRow}
+            `
+      );
+    } 
+
+    function handleChangeToInValidValidate(name) {
+      form[name].classList.add("is-invalid");
+    }
+
+    function handleChangeToValidValidate(name) {
+      form[name].classList.remove("is-invalid");
+    }
+
+    form.addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (!/[a-zA-Z]{2,30}/.test(form["nameCar"]?.value)) {
+          handleChangeToInValidValidate("nameCar");
+        } else {
+          handleChangeToValidValidate("nameCar");
+        }
+
+        if (!/[a-zA-Z]{2,30}/.test(form["carCompany"]?.value)) {
+          handleChangeToInValidValidate("carCompany");
+        } else {
+          handleChangeToValidValidate("carCompany");
+        }
+
+        if (form["cost"]?.value <= 0) {
+          handleChangeToInValidValidate("cost");
+        } else {
+          handleChangeToValidValidate("cost");
+        }
+
+        if (!form["person"]?.value) {
+          handleChangeToInValidValidate("person");
+        } else {
+          handleChangeToValidValidate("person");
+        }
+
+        if (!/^0+[0-9]{9}$/.test(form["phoneNumber"]?.value)) {
+          handleChangeToInValidValidate("phoneNumber");
+        } else {
+          handleChangeToValidValidate("phoneNumber");
+        }
+
+        if (!/[\D].+@[a-z]+\.+[a-z]{2,4}/.test(form["email"]?.value)) {
+          handleChangeToInValidValidate("email");
+        } else {
+          handleChangeToValidValidate("email");
+        }
+
+        if (!document.querySelector(".is-invalid")) {
+          const newVal = {
+            nameCar: form["nameCar"]?.value || "",
+            imageLink: form["imageLink"]?.value || "",
+            carCompany: form["carCompany"]?.value || "",
+            cost: form["cost"]?.value || "",
+            description: form["description"]?.value || "",
+            person: form["person"]?.value || "",
+            phoneNumber: form["phoneNumber"]?.value || "",
+            email: form["email"]?.value || "",
+          };
+          list.push(newVal);
+          handleAddNewRow(newVal);
+          localStorage.setItem("listCar", JSON.stringify(list));
+          resetValueButton.click();
+        }
+      },
+      false
+    );
+  </script>
+</html>

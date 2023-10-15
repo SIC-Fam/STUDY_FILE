@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  text-align: center;
+  padding: 20px 0;
+}
+button {
+  color: #fff;
+  background-color: rgb(0, 98, 255);
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.heading p {
+  font-size: 12px;
+}
+.container {
+  width: 1280px;
+  margin: 40px auto;
+  box-shadow: 0 2px 2px -3px #0000003d, 0 3px 3px 1px #0000003d;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: left;
+}
+.error {
+  background-color: rgba(165, 42, 42, 0.214);
+  color: brown;
+  padding: 5px;
+  border-radius: 2px;
+  margin: 5px 0;
+  animation: linearBackground 4s linear infinite;
+}
+.title {
+  font-weight: 600;
+  display: inline-block;
+  padding-top: 12px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 3px;
+  border: 1px solid #ccc;
+}
+.option {
+  display: flex;
+  gap: 10px;
+}
+.gapVerticle {
+  margin: 20px 0;
+}
+#guild {
+  display: flex;
+  flex-wrap: wrap;
+}
+#guild .item {
+  width: 25%;
+}
+.thanks {
+  font-size: 30px;
+}
+
+@keyframes linearBackground {
+  0% {
+    background-color: rgba(165, 42, 42, 0.501);
+  }
+  50% {
+    background-color: rgba(165, 42, 42, 0.1);
+  }
+  100% {
+    background-color: rgba(165, 42, 42, 0.501);
+  }
+}

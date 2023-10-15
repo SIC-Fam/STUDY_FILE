@@ -1,0 +1,22 @@
+.style2 table,
+.style2 tr,
+.style2 td,
+.style2 th {
+  border-collapse: separate;
+  border: 1px inset #3300ff;
+  width: 450px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+}
+.style2 table tr th {
+  background: #660066;
+  color: #ffffff;
+  height: 50px;
+  font-size: 15px;
+}
+.style2 .canhgiua {
+  text-align: center;
+  background: #660066;
+  color: #ffffff;
+  width: 10%;
+}

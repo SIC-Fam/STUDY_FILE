@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: inline-flex;
+  flex-direction: column;
+}
+.container span {
+  background-color: #00009a;
+  color: #fff;
+  padding: 10px;
+  border: 0.5px solid rgba(128, 128, 128, 0.658);
+}
+.container span:hover {
+  background-color: #c00;
+}
+.container .active {
+  background-color: #c00;
+}

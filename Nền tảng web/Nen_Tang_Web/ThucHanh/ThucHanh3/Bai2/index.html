@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="radio" checked name="color-option" value="red" />
+    <label for="">Đỏ</label>
+    <input type="radio" name="color-option" value="blue" />
+    <label for="">Xanh da trời</label>
+    <input type="radio" name="color-option" value="green" />
+    <label for="">Xanh lá cây</label>
+    <div
+      style="background-color: red; color: #fff; padding: 10px"
+      id="result"
+    ></div>
+  </body>
+  <script>
+    function changeColor() {
+      const result = document.getElementById("result");
+      const color = document.querySelector(
+        "input[name='color-option']:checked"
+      );
+
+      result.style.backgroundColor = color.value;
+      result.innerText = ` Bạn đã chọn ${color.value} radio button`;
+    }
+    document.addEventListener("click", changeColor);
+    changeColor();
+  </script>
+</html>

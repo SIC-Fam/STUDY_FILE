@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+.container > li {
+  position: relative;
+  background-color: #00009a;
+  color: #e6d7d7;
+  padding: 10px;
+  border: 0.5px solid rgba(128, 128, 128, 0.658);
+  float: left;
+}
+
+.container li .sub-menu {
+  left: 0;
+  margin-top: 10px;
+  width: 150px;
+  position: absolute;
+  background-color: #c00;
+  display: none;
+}
+
+.container > li:hover > .sub-menu {
+  display: block;
+}
+.sub-menu li {
+  padding: 10px;
+}

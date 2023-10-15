@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../bootstrap-5.0.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .nav-link.active,
+      .nav-link {
+        background-color: transparent !important;
+        color: blue !important;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="./header.png" alt="" />
+    </header>
+    <div class="row" style="height: 100vh">
+      <div
+        class="col-3 p-3 bg-light nav nav-pills flex-column"
+        id="v-pills-tab"
+        role="tablist"
+        style="background-color: cyan !important"
+        aria-orientation="vertical"
+      >
+        <a
+          class="nav-link active"
+          id="v-pills-home-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-home"
+          role="tab"
+          aria-controls="v-pills-home"
+          aria-selected="true"
+        >
+          Tin tuc
+        </a>
+        <a
+          class="nav-link"
+          id="v-pills-plus-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-plus"
+          role="tab"
+          aria-controls="v-pills-plus"
+          aria-selected="true"
+        >
+          Dong gop y kien
+        </a>
+      </div>
+      <div class="col-9 p-3">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="v-pills-home"
+            role="tabpanel"
+            aria-labelledby="v-pills-home-tab"
+          >
+            Trang tin tuc ne
+          </div>
+
+          <div
+            class="tab-pane fade text-center"
+            id="v-pills-plus"
+            role="tabpanel"
+            aria-labelledby="v-pills-plus-tab"
+          >
+            <h1>Dong gop y kien</h1>
+            <form
+              action=""
+              name="form"
+              class="d-flex flex-column"
+              style="text-align: left; max-width: 400px; margin: 0 auto"
+              onsubmit="return sunmitForm()"
+            >
+              <span>Ho va ten</span>
+              <input name="fullName" type="text" required />
+              <span>Noi dung gop y</span>
+              <textarea rows="3" width="100%" name="text" required></textarea>
+              <div class="d-flex gap-2 my-2 mx-3">
+                <button type="submit">Submit</button>
+                <button type="reset">Nhap lai</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../../Bootstrap/bootstrap-5.0.2/dist/js/bootstrap.min.js"></script>
+  <script>
+    const form = document.forms["form"];
+    const fullNameInput = document.querySelector("input[name='fullName']");
+    const textInput = document.querySelector("input[name='text']");
+    function sunmitForm() {
+      alert("Da gui");
+    }
+  </script>
+</html>

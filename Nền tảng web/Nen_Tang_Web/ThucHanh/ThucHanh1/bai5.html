@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 5</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      .container {
+        max-width: 850px;
+        margin: 40px auto;
+        display: flex;
+      }
+      .section_1,
+      .section_2 {
+        flex: 1;
+      }
+      .container--border {
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+      form {
+        display: block;
+      }
+      .container--border .title {
+        margin-bottom: 20px;
+      }
+      .container--border input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #fafafa;
+        margin: 4px 0;
+      }
+      .container--border button {
+        margin: 20px 0;
+        padding: 10px;
+        width: 100%;
+        color: #fff;
+        border: none;
+        background-color: rgba(0, 42, 255, 0.609);
+      }
+      .line {
+        border-top: 1px solid #ddd;
+      }
+      .line span {
+        display: inline-block;
+        background-color: #fff;
+        padding: 0 10px;
+        transform: translate(0, -50%);
+      }
+      .facebook-login {
+        color: rgb(12, 12, 82);
+      }
+      .facebook-login i {
+        margin-right: 10px;
+      }
+      .forgot-password {
+        padding-top: 10px;
+        color: rgb(12, 12, 82);
+        font-size: 14px;
+      }
+      .section_1 {
+        min-height: 300px;
+        animation: imageAnimate 5s infinite alternate;
+      }
+      @keyframes imageAnimate {
+        0% {
+          background: url("./image1.jpeg") top center/ cover no-repeat;
+        }
+        25% {
+          background: url("./image2.jpeg") top center/ cover no-repeat;
+        }
+        50% {
+          background: url("./image3.jpeg") top center/ cover no-repeat;
+        }
+        75% {
+          background: url("./image4.jpeg") top center/ cover no-repeat;
+        }
+        100% {
+          background: url("./image1.jpeg") top center/ cover no-repeat;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section_1"></div>
+      <div class="section_2">
+        <div class="container--border">
+          <h2 class="title">Instagram</h2>
+          <form action="">
+            <input
+              placeholder="Phone number, username or email"
+              type="text"
+              name="account"
+            />
+            <input placeholder="Password" name="password" type="password" />
+            <button type="submit">Login</button>
+
+            <div class="line">
+              <span>OR</span>
+            </div>
+
+            <a
+              href="https://www.facebook.com/Bui.Ngoc.1302/"
+              class="facebook-login"
+            >
+              <i class="fab fa-facebook-square"></i>Login with facebook
+            </a>
+            <p class="forgot-password">Forgot password?</p>
+          </form>
+        </div>
+        <div class="container--border">
+          Dont have an account?
+          <a style="color: blue; font-weight: 700" href="">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

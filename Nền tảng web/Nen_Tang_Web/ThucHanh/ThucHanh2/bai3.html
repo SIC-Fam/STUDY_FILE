@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 3</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      img {
+        position: absolute;
+      }
+      .img1 {
+        top: 0;
+        left: 0;
+      }
+      .img2 {
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="img1" width="200px" src="./image1.jpeg" alt="" />
+    <img class="img2" width="200px" src="./image2.jpeg" alt="" />
+  </body>
+  <script>
+    const yMax = window.innerHeight;
+    const xMax = window.innerWidth;
+    const img1 = document.querySelector(".img1");
+    const img2 = document.querySelector(".img2");
+    setInterval(() => {
+      let oldLeft = img1.style.left.replace("px", "");
+      let oldTop = img2.style.top.replace("px", "");
+      img1.style.left = `${++oldLeft >= xMax ? 0 : ++oldLeft + 10}px`;
+      img2.style.top = `${++oldTop >= yMax ? 0 : ++oldTop + 10}px`;
+    }, 50);
+  </script>
+</html>

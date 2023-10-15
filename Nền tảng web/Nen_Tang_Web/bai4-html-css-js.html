@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .container {
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 100px;
+        border: 2px solid #333;
+        padding: 10px;
+      }
+      .container > form > div {
+        margin: 8px 0;
+        display: flex;
+        align-items: center;
+      }
+      input {
+        width: 200px;
+        height: 24px;
+      }
+      select {
+        height: 24px;
+      }
+      label {
+        padding-right: 10px;
+      }
+      .form-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .form-buttons input {
+        margin: 0 6px;
+        width: 60px;
+      }
+      .list-status {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .list-status label {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .list-status input {
+        width: 16px;
+      }
+      h3 {
+        text-align: center;
+        font-size: 24px;
+      }
+      span {
+        font-size: 20px;
+        padding-left: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>Đăng ký thành viên</h3>
+      <form>
+        <span>Thông tin tài khoản</span>
+        <div>
+          <label>Username: </label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div>
+          <label>Password: </label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div>
+          <label>Nhập lại password: </label>
+          <input type="password" name="re-password" id="re-password" />
+        </div>
+        <span>Thông tin cá nhân</span>
+        <div>
+          <label>Họ và tên: </label>
+          <input type="text" name="fullname" id="fullname" />
+        </div>
+        <div>
+          <label>Giới tính: </label>
+          <select name="gender">
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+          </select>
+        </div>
+        <div class="form-address">
+          <label>Địa chỉ: </label> <textarea rows="4"></textarea>
+        </div>
+        <div>
+          <label>Ngày sinh: </label>
+          <input type="date" name="birthday" id="birthday" />
+        </div>
+        <div>
+          <label>Email: </label> <input type="email" name="email" id="email" />
+        </div>
+        <div class="form-status">
+          <label>Tình trạng hôn nhân</label> <br />
+          <div class="list-status">
+            <label
+              ><input type="radio" name="status" value="độc thân" />Độc
+              thân</label
+            >
+            <label>
+              <input type="radio" name="status" value="đã đính hôn" /> Đã đính
+              hôn</label
+            >
+            <label>
+              <input type="radio" name="status" value="ly dị" /> Ly dị
+            </label>
+            <label>
+              <input type="radio" name="status" value="quá phụ" /> Quá phụ
+            </label>
+          </div>
+        </div>
+        <div class="form-buttons">
+          <input type="submit" value="Gửi đi" />
+          <input type="reset" value="Nhập lại" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

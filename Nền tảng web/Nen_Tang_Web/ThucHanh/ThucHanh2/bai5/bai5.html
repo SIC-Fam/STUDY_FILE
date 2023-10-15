@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style5.css" />
+  </head>
+  <body>
+    <div class="heading">
+      <h2>ĐĂNG KÝ TIÊM VẮC XIN COVID-19</h2>
+      <p>YÊU CẦU ĐÃ ĐĂNG KÝ RỒI VUI LÒNG KHÔNG ĐĂNG KÝ LẠI</p>
+      <p>TIẾP NHẬN ĐĂNG KÝ CHO ĐẾN 14 GIỜ NGÀY 14/7/2021</p>
+    </div>
+    <form
+      name="form"
+      action=""
+      method="GET"
+      class="container"
+      onsubmit="return submitForm()"
+    >
+      <label class="title" class="title" for=""> Tên đơn vị * </label>
+      <p class="des">
+        Ghi đúng tên doanh nghiệp/ Hộ kinh doanh theo Giấy chứng nhận đăng ký
+        kinh doanh
+      </p>
+      <input type="text" name="tenDonVi" id="tenDonVi" />
+      <label class="title" for="">Mã số thuế *</label>
+      <input type="text" name="msthue" id="msthue" />
+      <label class="title" for="">Địa chỉ chi tiết(số nhà, đường) *</label>
+      <input type="text" name="address" id="address" />
+      <label class="title" for="">Ngành nghề *</label>
+      <p class="des">Chọn ngành nghề đơn vị mình đang SXKD</p>
+      <div id="carier"></div>
+      <label class="title" for="">Phường *</label>
+      <div id="guild"></div>
+      <label class="title" for="">Quận *</label>
+      <input type="text" name="district" id="district" />
+      <label class="title" for="">Tổng số người lao động tại đơn vị *</label>
+      <input type="text" name="employAmount" id="employAmount" />
+      <label class="title" for="">Số người đã tiêm vắc xin covid 19 *</label>
+      <input type="text" name="amountVaccinated" id="amountVaccinated" />
+      <label class="title" for=""
+        >Số người đồng thuận tiêm vắc xin covid 19 *</label
+      >
+      <input type="text" name="amountAgreed" id="amountAgreed" />
+      <label class="title" for="">Ghi chú nếu có</label>
+      <input type="text" name="note" />
+      <label class="title" for="">Họ tên người liên hệ *</label>
+      <input type="text" name="fullName" id="fullName" />
+      <label class="title" for="">Số điện thoại *</label>
+      <input type="text" name="phoneNumber" id="phoneNumber" />
+      <label class="title" for="">Email *</label>
+      <input type="text" for="email" id="email" />
+      <p class="thanks gapVerticle">
+        Cảm ơn đã đăng ký thông tin và hợp tác này
+      </p>
+      <p class="gapVerticle">PHÒNG KINH TẾ/ UBND QUẬN 11</p>
+      <hr />
+      <div class="option gapVerticle">
+        <input type="checkbox" name="sendNoti" />
+        <label htmlFor="">Send me a copy of response</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+
+  <script src="./main.js"></script>
+</html>

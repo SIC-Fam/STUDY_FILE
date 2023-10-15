@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        resize: none;
+      }
+      .section {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .section--small{
+        max-width: 700px;
+        gap:16px
+      }
+      label{
+        padding-right: 5px
+      }
+      .input{
+        padding:8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .button{
+        padding: 8px;
+        border: none;
+        cursor: pointer;
+        min-width: 100px;
+      }
+      .button--primary{
+        background-color: rgba(0, 0, 255, 0.65);
+        color: #fff
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <p>
+        Đây là Dolphin
+        <img
+          width="200px"
+          src="https://cacanhnho.com/wp-content/uploads/Tong-hop-hinh-anh-ca-Heo-dep-nhat-1.jpg"
+          alt=""
+        />
+      </p>
+      <p>Kích vào để xem:</p>
+      <a
+        target="_blank"
+        href="https://vdoc.edu.vn/wp-content/uploads/2022/07/ta-con-voi.jpg"
+        >Elephant</a
+      >
+      <a
+        target="_blank"
+        href="https://dacaocapcyvy.com.vn/public/uploads/news/da-ca-sau.jpg"
+        >Crocodiles</a
+      >
+      <a
+        target="_blank"
+        href="https://upload.wikimedia.org/wikipedia/it/thumb/c/c3/I_pinguini_di_Madagascar.png/1200px-I_pinguini_di_Madagascar.png"
+        >Pinguini</a
+      >
+      <a
+        target="_blank"
+        href="https://info-imgs.vgcloud.vn/2022/01/10/10/dieu-dac-biet-ben-trong-tui-cua-kangaroo-me.jpg"
+        >Kangaroo</a
+      >
+      <p>
+        Mọi chi tiết xin liên hệ bằng
+        <a href="mailto:buithuyngoc1@gmail.com">email</a>
+      </p>
+    </div>
+    <hr />
+    <div class="section">
+        <h4>Create User's Account</h4>
+        <form action="" class="section section--small">
+            <label for="fullName">Họ tên</label>
+            <input name="fullName" placeholder="Họ tên" minlength="4" class="input" required type="text" pattern="[\sa-zA-Z]*" />
+            <span>
+                <label for="">Giới tính</label>
+                <input class="input" required type="radio" name="" id="" />
+                <label for="">Nam</label>
+                <input class="input" required type="radio" name="" id="" />
+                <label for="">Nữ</label>
+            </span>
+            <span>
+                <label for="">Ngày sinh</label>
+                <input placeholder="Ngày" class="input" required type="text" pattern="\b(0?[1-9]|[1-2][0-9]|[3][0-1])\b" />
+                <input placeholder="Tháng" class="input" required type="text" pattern="\b(0?[1-9]|1[0-2])\b" />
+                <input placeholder="Năm" class="input" required type="text" pattern="\b(19?[0-9][0-9]|20[0-2][0-3])\b" />
+                <br />
+            </span>
+            <span>
+                <label for="">Trình độ chuyên môn</label>
+                <select name="" id="">
+                    <option value="">Đại học</option>
+                    <option value="">Cao đẳng</option>
+                    <option value="">Trung cấp</option>
+                </select>
+            </span>
+            <span>
+                <label for="">Ngoại ngữ</label>
+                <span>
+                    <input class="input" type="checkbox" value="" />
+                    <label for="">Anh</label>
+                </span>
+                <span>
+                    <input class="input" type="checkbox" value="" />
+                    <label for="">Pháp</label>
+                </span>
+                <span>
+                    <input class="input" type="checkbox" value="" />
+                    <label for="">Đức</label>
+                </span>
+                <span>
+                    <input class="input" type="checkbox" value="" />
+                    <label for="">Trung</label>
+                </span>
+                <span>
+                    <input class="input" type="checkbox" value="" />
+                    <label for="">Khác</label>
+                </span>
+            </span>
+            <span>
+                <label for="">Email</label>
+                <input placeholder='Email' class="input" required type="email" name="" id="" />
+            </span>
+            <span>
+                <label for="">UserName</label>
+                <input placeholder="UserName" class="input" required type="text" name="" id="" pattern="[0-9A-Za-z]" />
+            </span>
+            <span>
+                <label for="">Password</label>
+                <input placeholder="Password" class="input" required type="password" name="" id="" />
+            </span>
+            <span>
+                <label for="">Nhập lại password</label>
+                <input placeholder="Nhập lại pasword" class="input" required type="password" name="" id="" />
+            </span>
+            <label for="">Ghi chú</label>
+            <textarea class="input" name="" placeholder="Ghi chú" id="" cols="30" rows="10"></textarea>
+            <div>
+                <input class="button button--primary" type="submit" />
+                <input class="button" type="reset" />
+            </div>
+        </div>
+        </form>
+    </body>
+    </html>
+    

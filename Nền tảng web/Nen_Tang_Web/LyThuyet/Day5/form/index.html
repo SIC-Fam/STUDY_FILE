@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        color: #000;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      body {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .container {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.3),
+          0 3px 3px 3px rgba(0, 0, 0, 0.3);
+      }
+      section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      form {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      input,
+      textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        resize: none;
+      }
+      button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px;
+        background-color: brown;
+        color: #fff;
+        transition: 0.2s linear;
+      }
+      button:hover {
+        opacity: 70%;
+        cursor: pointer;
+      }
+      i {
+        color: brown;
+        min-width: 25px;
+      }
+      p {
+        margin: 10px 0;
+        display: flex;
+        align-items: flex-start;
+      }
+      .title {
+        color: brown;
+      }
+      .error {
+        display: none;
+        color: brown;
+        background-color: rgba(165, 42, 42, 0.076);
+        padding: 5px;
+        border-radius: 2px;
+      }
+      .error.error-name {
+        display: block;
+      }
+      .error.error-email {
+        display: block;
+      }
+      .error.error-phoneNumber {
+        display: block;
+      }
+      .error.error-note {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <h2 class="title">Liên hệ</h2>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <a href="https://goo.gl/maps/G1jQNbsib8uETAwH8"
+            >Địa chỉ: Tầng 1 toàn nhà C5 Đại học Thuỷ Lợi, 175 Tây Sơn, Đống Đa,
+            Hà Nội</a
+          >
+        </p>
+        <p>
+          <i class="fas fa-headphones"></i>
+          <a href="tel:02435637511">Tel: 0243 563 7511</a>
+        </p>
+        <p>
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:0382020858">Hotline: 0382 020 858</a>
+        </p>
+        <p>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:info@aptech.com">Email: info@aptech.com</a>
+        </p>
+      </section>
+      <form name="form" action="" method="get" onsubmit="return submitForm()">
+        <input
+          type="text"
+          placeholder="Họ và tên"
+          name="name"
+        />
+        <div id="name" class="error">Vui lòng nhập tên</div>
+
+        <input
+          type="text"
+          placeholder="Email"
+          name="email"
+        />
+        <div id="email" class="error">Vui lòng nhập email</div>
+
+        <input
+          placeholder="Số điện thoại"
+          name="phone-number"
+        />
+        <div id="phone-number" class="error"></div>
+
+        <textarea
+          name="note"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Lời nhắn"
+        ></textarea>
+        <div id="note" class="error"></div>
+
+        <button type="submit">Gửi</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    const form = document.forms["form"];
+    const nameInput = document.querySelector("#name");
+    const emailInput = document.querySelector("#email");
+    const phoneNumberInput = document.querySelector("#phone-number");
+    const noteInput = document.querySelector("#note");
+    function submitForm() {
+      if (!form["name"].value) {
+        nameInput.innerText = "Đây là trường bắt buộc";
+        nameInput.classList.add("error-name");
+      } else {
+        if (/[a-zA-Z]{3-40}/.test(form["name"].value)) {
+          nameInput.classList.remove("error-name");
+        } else {
+          nameInput.innerText =
+            "Tên bao gồm chỉ chữ và có độ dài từ 3-40 kí tự";
+          nameInput.classList.add("error-name");
+        }
+      }
+
+      if (!form["email"].value) {
+        emailInput.innerText = "Đây là trường bắt buộc";
+        emailInput.classList.add("error-email");
+      } else {
+        if (/[\D].+@[a-z]+\.+[a-z]{2,4}/.test(form["email"].value)) {
+          emailInput.classList.remove("error-email");
+        } else {
+          emailInput.innerText = "Email cần có định dạng xyz@gmail.com";
+          emailInput.classList.add("error-email");
+        }
+      }
+
+      if (!form["phone-number"].value) {
+        phoneNumberInput.innerText = "Đây là trường bắt buộc";
+        phoneNumberInput.classList.add("error-phoneNumber");
+      } else {
+        if (/^[0-9]{10}$/.test(form["phone-number"].value)) {
+          phoneNumberInput.classList.remove("error-phoneNumber");
+        } else {
+          phoneNumberInput.innerText = "Số điện thoại phải bao gồm 10 chữ số";
+          phoneNumberInput.classList.add("error-phoneNumber");
+        }
+      }
+
+      if (!form["note"].value) {
+        noteInput.innerText = "Đây là trường bắt buộc";
+        noteInput.classList.add("error-note");
+      } else {
+        noteInput.classList.remove("error-note");
+      }
+
+      return false;
+    }
+  </script>
+</html>

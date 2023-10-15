@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  margin: 50px 50px 0;
+}
+.title {
+  color: #c00;
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: 700;
+}
+ul {
+  list-style-type: none;
+}
+td {
+  padding: 0 30px;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+li {
+  padding: 10px;
+  position: relative;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: 100ms linear;
+}
+li:not(:first-of-type) {
+  border-top: none;
+}
+.list_1 {
+  list-style-image: url("https://timoday.edu.vn/wp-content/uploads/2020/02/sqpurple.gif?fbclid=IwAR2wJI-GGt3wQKlZvxcVICAB9DT6QNRqnwvE3ayFQjnrqZhk6KTHGMAptDs");
+}
+.list_2 {
+  list-style-type: "\1F44D";
+}
+li:hover {
+  background-color: #cccc01;
+}
+li:hover a {
+  color: #fff;
+}
