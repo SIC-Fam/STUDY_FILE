@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="GuiJava">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/GuiJava.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
